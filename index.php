@@ -20,23 +20,35 @@ require 'function.php';
 
 // $uri = parse_url($_SERVER["REQUEST_URI"]);
 // var_dump($uri);
-$uri = parse_url($_SERVER["REQUEST_URI"])['path'];
-var_dump($uri);
+//var_dump($uri);
 //var_dump($uri);
 //dd($uri);
 
 //dd(parse_url($uri));
 
 
-if($uri === '/'){ //可以試試看改成等於HOME的URI
+// if($uri === '/'){ //可以試試看改成等於HOME的URI
 
-    require 'controllers/Cindex.php';
-}
-else if($uri === '/about'){
-    require 'controllers/about.php';
-    //echO "錯";
-}
-else if ($uri === '/contact'){
-    require 'controllers/contact.php';
-}
+//     require 'controllers/Cindex.php';
+// }
+// else if($uri === '/about'){
+//     require 'controllers/about.php';
+//     //echO "錯";
+// }
+// else if ($uri === '/contact'){
+//     require 'controllers/contact.php';
+// }
 
+$uri = parse_url($_SERVER["REQUEST_URI"])['path'];
+
+$routes = 
+[
+    '/' => 'controllers/Cindex.php',
+    '/about' => 'controllers/about.php',
+    '/contact' => 'controllers/contact.php'
+
+];
+
+if (array_key_exists($uri, $routes)){
+    require $routes[$uri];
+}
