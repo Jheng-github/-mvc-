@@ -7,7 +7,25 @@
 
 
 require 'function.php';
-require 'route.php';
+//require 'route.php';
+
+$dsn = "mysql:host=localhost;port=3306;dbname=myapp;charset=UTF8mb4";
+        $user = 'jheng';
+        $pwd = '122737420';
+
+$pdo = new PDO($dsn,$user,$pwd);
+
+$statement = $pdo->prepare("select * from posts");
+
+$statement->execute();
+
+$posts = $statement->fetchall(PDO::FETCH_ASSOC);
+
+
+foreach($posts as $post){
+    echo "<li>".$post['title']."</li>";
+}
+
 //echo "hello where";
 
 //  $uri = $_SERVER["REQUEST_URI"];
