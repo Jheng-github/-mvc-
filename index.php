@@ -8,23 +8,19 @@
 
 require 'function.php';
 //require 'route.php';
+require 'Database.php';
 
-$dsn = "mysql:host=localhost;port=3306;dbname=myapp;charset=UTF8mb4";
-        $user = 'jheng';
-        $pwd = '122737420';
+$db = new Database;
 
-$pdo = new PDO($dsn,$user,$pwd);
-
-$statement = $pdo->prepare("select * from posts");
-
-$statement->execute();
-
-$posts = $statement->fetchall(PDO::FETCH_ASSOC);
+$posts =$db->query("select * from posts")->fetch(PDO::FETCH_ASSOC);
 
 
-foreach($posts as $post){
-    echo "<li>".$post['title']."</li>";
-}
+// foreach ($posts as $post) {
+//     echo "<li>" . $post['title'] . "</li>";
+// }
+
+
+
 
 //echo "hello where";
 
@@ -56,4 +52,3 @@ foreach($posts as $post){
 // else if ($uri === '/contact'){
 //     require 'controllers/contact.php';
 // }
-
