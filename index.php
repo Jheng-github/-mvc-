@@ -9,15 +9,21 @@
 require 'function.php';
 //require 'route.php';
 require 'Database.php';
-
-$db = new Database;
-
-$posts =$db->query("select * from posts")->fetch(PDO::FETCH_ASSOC);
+$config = require 'config.php';
 
 
-// foreach ($posts as $post) {
-//     echo "<li>" . $post['title'] . "</li>";
-// }
+
+$db = new Database($config['database']);
+
+$posts =$db->query("select * from posts")->fetch();
+
+
+
+
+
+foreach ($posts as $post) {
+    echo "<li>" . $post. "</li>";
+}
 
 
 
