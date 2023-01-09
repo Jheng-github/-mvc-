@@ -5,7 +5,8 @@ $routes =
 [
     '/' => 'controllers/Cindex.php',
     '/about' => 'controllers/about.php',
-    '/note' => 'controllers/notes.php',
+    '/notes' => 'controllers/notes.php',
+    '/note' => 'controllers/note.php',
     '/contact' => 'controllers/contact.php'
 
 ];
