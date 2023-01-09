@@ -7,23 +7,46 @@
 
 
 require 'function.php';
-//require 'route.php';
 require 'Database.php';
-$config = require 'config.php';
+require 'route.php';
+//require 'Database.php';
 
 
 
-$db = new Database($config['database']);
-
-$posts =$db->query("select * from posts")->fetch();
-
+// $config = require 'config.php';
+// $db = new Database($config['database']);
 
 
 
 
-foreach ($posts as $post) {
-    echo "<li>" . $post. "</li>";
-}
+
+
+
+
+
+
+
+//dd($_GET);
+
+// $id = $_GET['id'];
+// //var_dump($id);
+
+
+// $query = "select * from posts where id = :id";
+
+// $posts =$db->query($query, [':id' => $id])->fetch();
+
+// dd($posts);
+
+
+
+// foreach ($posts as $post) {
+//    //"<li>" . $post. "</li>";
+//    var_dump($posts);
+//    echo "<BR>";
+//    var_dump($post);
+//    echo "<BR>";
+// }
 
 
 

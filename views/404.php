@@ -7,7 +7,7 @@
       <!-- Replace with your content -->
       <H1 class="text-2xl fint-bold">Sorry , page not found</H1>
         <p class="mt-4">
-         <a href="/" class="text-blue underline" >點擊我回首頁</a>
+         <a href="/" class="text-blue-500 underline" >點擊我回首頁</a>
 
         </p>
     </div>

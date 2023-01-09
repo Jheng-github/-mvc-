@@ -1,10 +1,11 @@
 <?php
-$uri = parse_url($_SERVER["REQUEST_URI"])['path'];
-
+$uri = parse_url($_SERVER["REQUEST_URI"])['path']; // 抓取uri localhost8888後面的值  / or /about...等
+//var_dump($uri);
 $routes = 
 [
     '/' => 'controllers/Cindex.php',
     '/about' => 'controllers/about.php',
+    '/note' => 'controllers/notes.php',
     '/contact' => 'controllers/contact.php'
 
 ];
@@ -18,10 +19,10 @@ function abort($code = 404){
 
 //var_dump($routes[$uri]);
 function routeToController($uri, $routes){
-if (array_key_exists($uri, $routes)){
-    require $routes[$uri];
+if (array_key_exists($uri, $routes)){ //檢查routes的key值是否存在於uri中 
+    require $routes[$uri]; //由於uri的值相當於routes的key值 就可以順便做引入檔案的動作了
 }else{
-    abort();
+    abort(); //如果都沒有 回傳404error
 }
 }
 

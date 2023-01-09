@@ -28,12 +28,12 @@ class Database
     }
 
 
-    public function query($query)
+    public function query($query, $params = [])
     {
 
         //$statement = $pdo->prepare($query)
         $statement = $this->connection->prepare($query);
-        $statement->execute();
+        $statement->execute($params);
 
         return $statement;
     }
