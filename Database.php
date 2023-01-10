@@ -4,18 +4,11 @@ class Database
 
     public $connection;
 
+    public $statement;
+
 
     public function __construct($config)
     {
-        // $config  = [
-        //     'host' => 'localhost',
-        //     'port' => 3306,
-        //     'dbname' => 'myapp',
-        //     'charset' => 'UTF8mb4'
-        // ];
-        //dd(http_build_query($config, ';'));
-       // dd(http_build_query($config, ";")); //example.com?host=localhost&port=3306&name=myapp
-      // $dsn ='mysql'.http_build_query($config, '', ';');
 
        $dsn = "mysql:host={$config['host']};port={$config['port']};dbname={$config['dbname']};charset={$config['charset']}";
         $user = 'jheng';
@@ -32,11 +25,34 @@ class Database
     {
 
         //$statement = $pdo->prepare($query)
-        $statement = $this->connection->prepare($query);
-        $statement->execute($params);
-
-
-        return $this;
+        $this->statement = $this->connection->prepare($query);
+        var_dump($this->statement);
+        echo "<BR>";
+        $this->statement->execute($params);
+        var_dump($this->statement);
+        echo "<BR>";
+        var_dump($this);
+       return $this;
+        
         //return $statement;
     }
+
+    public function find(){
+        return $this->statement->fetch();
+    }
+
+    public function get(){
+      return $this->statement->fetchall();
+    }
+
+    public function findOrFail(){
+      $result = $this->find();
+
+      if(!$result){
+        abort();
+      }
+
+      return $result;
+    }
+
 }

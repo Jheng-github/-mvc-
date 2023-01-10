@@ -7,7 +7,7 @@ $db = new Database($config['database']); //在這邊產生根資料庫連地__co
 
 
 
-$notes = $db->query('select * from notes where user_id = 1;') -> fetchall();
+$notes = $db->query('select * from notes where user_id = 1;') -> get();
 
 //dd($notes); //確認有取得資料user_id = 1 的資料
 
