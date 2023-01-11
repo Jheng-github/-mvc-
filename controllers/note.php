@@ -22,7 +22,7 @@ $note = $db->query('select * from notes where id = :id',['id'=>$id ]) -> findOrF
 
 
 $currentUserId =1;
-authorize($note['user_id'] !== $currentUserId);  // 包裝下方
+authorize($note['user_id'] == $currentUserId);  // 包裝下方
 
 
 // if($note['user_id'] !== $currentUserId){ //如果嘗試訪別人的筆記本拒絕訪問
