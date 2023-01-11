@@ -8,7 +8,7 @@
       <p class='mb-6'> <a href="/notes" class="text-blue-500 hover:underline">go back...</a></p>
 
           <?php
-          echo "<P>".$note['body']."</P>";
+          echo "<P>".htmlspecialchars($note['body'])."</P>";
           ?>
           
         <!-- echo "<a href=/note?id=".$note['id']." class='text-blue-500 hover:underline'>"

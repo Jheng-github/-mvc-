@@ -28,7 +28,7 @@ class Database
         $this->statement = $this->connection->prepare($query);
         //var_dump($this->statement);
         //echo "<BR>";
-        $this->statement->execute($params);
+        $this->statement->execute($params);// 陣列使用ex[uesr_id=>id]
         //var_dump($this->statement);
         //echo "<BR>";
         //var_dump($this);
