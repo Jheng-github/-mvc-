@@ -26,13 +26,13 @@ class Database
 
         //$statement = $pdo->prepare($query)
         $this->statement = $this->connection->prepare($query);
-        var_dump($this->statement);
-        echo "<BR>";
+        //var_dump($this->statement);
+        //echo "<BR>";
         $this->statement->execute($params);
-        var_dump($this->statement);
-        echo "<BR>";
-        var_dump($this);
-       return $this;
+        //var_dump($this->statement);
+        //echo "<BR>";
+        //var_dump($this);
+       return $this; //鏈式呼叫
         
         //return $statement;
     }

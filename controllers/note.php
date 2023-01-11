@@ -16,7 +16,7 @@ $note = $db->query('select * from notes where id = :id',['id'=>$id ]) -> findOrF
 
 
 // //dd($note); //確認有取得資料
-// if(!$note){  //如果note裡面沒有資料返回404
+// if(!$note){  //如果note裡面沒有資料返回 404
 //     abort();
 // }
 
