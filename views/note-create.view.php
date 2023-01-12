@@ -27,11 +27,18 @@
                                         class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
 
                                         placeholder="芭芭拉芭芭拉...."
-                                      ></textarea>
-                                      <?php if(isset($errors['body'])) {
-                                      echo "<P class=text-red-600 >".$errors['body']."</p>";
+                                      ><?php //如果表單裡面的值裡原本就有,那就會繼續保持存在,不會送出之後不見.
+                                       if(isset($_POST['body'])){
+                                        echo $_POST['body'];
+                                      }else{
+                                        echo '';
+                                      }  ?></textarea>
+
+                                      <?php if(isset($errors['body'])) { // note-create 裡面抓出如果筆記本為0 or字數太多顯示出來的
+                                      echo "<P class='text-red-600 text-xl mt-2'>".$errors['body']."</p>";
                                       }
                                       ?>
+
                                     </div>
                                 </div>
                             </div>
