@@ -13,4 +13,4 @@ $notes = $db->query('select * from notes where user_id = 1;') -> get();
 
 
 //require "../views/about.view.php"; //用本地端要這樣
-require 'views/notes.view.php'; //php -S localhost
+require 'views/notes/index.view.php'; //php -S localhost
