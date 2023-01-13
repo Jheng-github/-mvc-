@@ -9,13 +9,16 @@ const BASE_PATH = __DIR__ . '/../';
 //var_dump(BASE_PATH);
 
 require BASE_PATH .'function.php'; //因為base_path 是在funciton裡面所以這邊必須用常數來連接,而不是fn
+
 spl_autoload_register(function($class){
-    dd($class);
+    //var_dump(base_path($class. '.php'));
+     require base_path("core/".$class.".php");
 });
 
 // require base_path('Database.php');
 // require base_path('Response.php');
 require base_path('route.php');
+
 //require 'Database.php';
 
 

@@ -28,22 +28,28 @@
 
                                         placeholder="芭芭拉芭芭拉...."
                                       ><?php //如果表單裡面的值裡原本就有,那就會繼續保持存在,不會送出之後不見.
+                                      //var_dump($_POST);
                                        if(isset($_POST['body'])){
                                         echo $_POST['body'];
-                                      }else{
-                                        echo '';
-                                      }  ?></textarea>
+                                      } ?></textarea>
 
-                                      <?php if(isset($errors['body'])) { // note-create 裡面抓出如果筆記本為0 or字數太多顯示出來的
-                                      echo "<P class='text-red-600 text-xl mt-2'>".$errors['body']."</p>";
+                                      <?php 
+                                      if(isset($errors['body'])) { // note-create 裡面抓出如果筆記本為0 or字數太多顯示出來的
+                                      echo "<p class='text-red-600 text-xl mt-2'>".$errors['body']."</p>";
                                       }
+                                      
+                                    //   if(empty($errors['body'])){ 
+                              
+                                    //     var_dump($right['body']);
+                                    //  }
+                                    
                                       ?>
 
                                     </div>
                                 </div>
                             </div>
                             <div class="bg-gray-50 px-4 py-3 text-right sm:px-6">
-                                <button type="submit" class="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Save</button>
+                                <button type="submit" name="submit" class="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Save</button>
                             </div>
                         </div>
                     </form>
