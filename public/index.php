@@ -4,7 +4,9 @@
 // //require '/Users/jheng/Sites/web/views/partials/banner.php';
 // require '/Users/jheng/Sites/web/views/partials/footer.php'; 用本地端SITE開發可以使用
 
+const BASE_PATH = __DIR__ . '/../';
 
+//var_dump(BASE_PATH);
 
 require 'function.php';
 require 'Database.php';

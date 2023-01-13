@@ -2,7 +2,7 @@
 $routes = require('routes.php');
 
 $uri = parse_url($_SERVER["REQUEST_URI"])['path']; // 抓取uri localhost8888後面的值  / or /about...等
-var_dump($uri);
+//var_dump($uri);
 
 
 function abort($code = 404){
