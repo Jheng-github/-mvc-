@@ -41,7 +41,7 @@ class Database
         return $this->statement->fetch();
     }
 
-    public function get(){
+    public function get(){ //取得所有資料
       return $this->statement->fetchall();
     }
 

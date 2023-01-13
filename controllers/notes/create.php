@@ -1,11 +1,11 @@
 <?php
-require 'Validator.php';
+require base_path('Validator.php');
 
-$config = require 'config.php';
+$config = require base_path('config.php');
 $db = new Database($config['database']);
 
 
-$heading ='Create Note';
+//$heading ='Create Note';
 
 //dd(Validator::email('1e12ee12e12'));
 
@@ -14,12 +14,12 @@ $heading ='Create Note';
 // }
 
 
-
+$errors = [];
 //dd($_SERVER);//     ["REQUEST_METHOD"]=>string(4) "POST"
 //輸入的值不可為0 or 多餘500字  這兩個條件以外才能加入資料庫
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     //dd($_POST);//表單收到的form值 
-    $errors = [];
+
 
     //$validator = NEW Validator;
 
@@ -45,4 +45,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 }
 
 
-require 'views/notes/create.view.php';
+//require 'views/notes/create.view.php';
+view("notes/create.view.php",[
+    'heading' => 'Create Note',
+    'errors' => $errors
+]);
