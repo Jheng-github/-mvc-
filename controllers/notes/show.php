@@ -1,4 +1,8 @@
 <?php
+
+use core\Database;
+
+
 $config = require base_path('config.php');
 $db = new Database($config['database']); //在這邊產生根資料庫連地__connection , 
 //dd($db); //確認有東西

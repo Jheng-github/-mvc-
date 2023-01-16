@@ -1,4 +1,9 @@
 <?php
+
+use core\Database;
+use core\Validator;
+
+
 //var_dump(base_path('core/validator.php'));
 require base_path('core/validator.php');
 
