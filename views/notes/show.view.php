@@ -12,13 +12,10 @@
           ?>
           <!--用form表單來建立刪除-->
           <form class=mt-5 method=POST>
+            <input type="hidden" name='id' value="<?php echo $note['id']?>"></input>
           <button class="text-red-900">刪除此紀錄</button>
 
           </form>
-
-
-        <!-- echo "<a href=/note?id=".$note['id']." class='text-blue-500 hover:underline'>"
-        //."<li>".$note['body']."</li>"."</a>";   -->
 
 
     </div>
