@@ -33,7 +33,7 @@ authorize($note['user_id'] == $currentUserId);  // 包裝下方
 //require "../views/about.view.php"; //用本地端要這樣
 //require 'views/notes/show.view.php'; //php -S localhost
 
-view("notes/create.view.php",[
+view("notes/show.view.php",[
     'heading' => 'Note',
     'note' => $note
 ]);

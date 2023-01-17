@@ -7,7 +7,7 @@ $uri = parse_url($_SERVER["REQUEST_URI"])['path']; // 抓取uri localhost8888後
 
 function abort($code = 404){
     http_response_code($code);
-    require base_path("views/$code.php");
+    require base_path("views/$code.php")    ;
     die();
 }
 

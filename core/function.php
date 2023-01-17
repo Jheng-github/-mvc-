@@ -1,4 +1,6 @@
 <?php
+use core\Response;
+
 
 function dd($value){
     echo "<PRE>";
@@ -12,7 +14,7 @@ function urlIs($value){
     return $_SERVER['REQUEST_URI'] === $value;
 }
 
-function authorize($condition, $status = Response::FORBIDDEN){
+function authorize($condition, $status = Response::FORBIDDEN){ //彈性顯示回報錯誤ex 404
     if(!$condition){
         abort($status);
     }
