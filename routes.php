@@ -8,5 +8,7 @@ return
     '/notes/create' => 'controllers/notes/create.php',
     '/contact' => 'controllers/contact.php',
     '/messages' => 'controllers/notes/messages.php',
-    '/signup' => 'controllers/signup.php'
+    '/signup' => 'controllers/signup.php',
+    '/login' => 'controllers/login.php'
+
 ];
