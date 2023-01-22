@@ -61,4 +61,18 @@ class Database
       return $result;
     }
 
+    public function checkUser($uid){
+    $result = $this->query("SELECT * FROM users WHERE name_uid = :name_uid", [
+      'name_uid' => $uid
+  ])->get();
+  //dd(!empty($result)); //空值為true
+  return !empty($result); //有值return false
+  }
+
+  public function addUser($name_uid, $password) {
+    $this->query("INSERT INTO users(`name_uid`, `password`) VALUES(:name_uid, :password)", [
+        'name_uid' => $name_uid,
+        'password' => $password
+    ]);
+}
 }

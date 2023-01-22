@@ -18,8 +18,6 @@ $db = new Database($config['database']);
 // if(!Validator::email('1e12ee12e12')){
 //     dd('無效的mail驗證');
 // }
-
-
 $errors = [];
 $right = [];
 //dd($_SERVER);//     ["REQUEST_METHOD"]=>string(4) "POST"
