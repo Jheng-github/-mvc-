@@ -43,7 +43,7 @@ class Database
         //return $statement;
     }
 
-    public function find(){
+    public function find(){//單筆資料
         return $this->statement->fetch();
     }
 

@@ -3,6 +3,8 @@
 // require '/Users/jheng/Sites/web/views/partials/head.php';
 // //require '/Users/jheng/Sites/web/views/partials/banner.php';
 // require '/Users/jheng/Sites/web/views/partials/footer.php'; 用本地端SITE開發可以使用
+session_start();
+
 
 const BASE_PATH = __DIR__ . '/../';
 
