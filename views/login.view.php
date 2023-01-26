@@ -11,6 +11,7 @@
             <br>
             <label  for="password">登入密碼:</label>
             <input  class='mt-6' type="password" id="password" name="password" placeholder="請輸入密碼" required>
+            <?php if(isset($error['fail'])) echo "<p class='text-red-600 text-m mt-2'>".$error['fail']."</p>";  ?>
 
             <br><br>
            <!-- <input class='mt-6' type="submit" value="登入"> -->

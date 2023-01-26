@@ -61,18 +61,38 @@ class Database
       return $result;
     }
 
-    public function checkUser($uid){
+    public function checkUser($uid){//確認使用者  如果資料庫有一樣的 等於重複
     $result = $this->query("SELECT * FROM users WHERE name_uid = :name_uid", [
       'name_uid' => $uid
   ])->get();
+  //dd($result);
   //dd(!empty($result)); //空值為true
   return !empty($result); //有值return false
   }
 
-  public function addUser($name_uid, $password) {
+  public function addUser($name_uid, $password) { //加入使用者
+    $hash = password_hash($password, PASSWORD_DEFAULT); //hash密碼
     $this->query("INSERT INTO users(`name_uid`, `password`) VALUES(:name_uid, :password)", [
         'name_uid' => $name_uid,
-        'password' => $password
+        'password' => $hash
     ]);
 }
+
+  public function loginUser($uid, $password){
+    $user = $this->query("SELECT * FROM users WHERE name_uid = :name_uid", [
+      'name_uid' => $uid
+  ])->find();
+  //dd($user);
+  if($user){
+      if(password_verify($password,$user['password'])){
+          $_SESSION['user_id'] = $user['id'];
+          //dd($_SESSION['user_id']);
+          return true;
+      }else{
+          return false;
+      }
+  }else{
+      return false;
+  }
+  }
 }

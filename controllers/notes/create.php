@@ -43,7 +43,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     if(empty($errors)){ //如果error是空的,就代表他在上面if都沒卡關,可以輸入進去資料庫
         $right['body'] = '留言成功';
-    $db->query('INSERT INTO notes(body, user_id) VALUES(:body, :user_id)',[
+    $result = $db->query('INSERT INTO notes(body, user_id) VALUES(:body, :user_id)',[
         'body' => $_POST['body'], //$_POST['body']name值 ... body->資料庫欄位
         'user_id' => 1 //目前先寫死
     ]);
