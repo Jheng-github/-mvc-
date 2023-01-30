@@ -20,7 +20,7 @@ $notes = $db->query('select * from notes;') -> get(); //
 //require 'views/notes/index.view.php'; //php -S localhost
 
 
-view("notes/index.view.php",[
-    'heading' => 'My Notes',
+view("notes/messages.view.php",[
+    'heading' => 'All Notes',
     'notes' => $notes
 ]);

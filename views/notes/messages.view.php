@@ -19,10 +19,10 @@
 
 
     </ul>
-    <p class="mt-6">
+   <!-- <p class="mt-6">
       <a href="/notes/create" class="text-blue-500 hover:underline">Creat Note</a>
 
-    </p>
+    </p>預計可以在這邊做admin>  -->
   </div>
 </main>
 <?php require base_path('views/partials/footer.php'); ?>

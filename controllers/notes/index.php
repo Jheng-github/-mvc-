@@ -1,5 +1,5 @@
 <?php
-
+var_dump(session_id());
 use core\Database;
 
 
@@ -9,9 +9,10 @@ $db = new Database($config['database']); //在這邊產生根資料庫連地__co
 
 // $heading = "My Notes";
 
+//$_SESSION['user_id'] = $user['id'];
 
-
-$notes = $db->query('select * from notes where user_id = 1;') -> get(); //取得所有user_id 資料
+$notes = $db->query("select * from notes where user_id = :user_id;", ['user_id' => $_SESSION['user_id']]) 
+-> get(); //取得所有user_id 資料
 
 //dd($notes); //確認有取得資料user_id = 1 的資料
 

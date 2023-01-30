@@ -2,7 +2,7 @@
 
 use core\Database;
 use core\Validator;
-
+var_dump(session_id());
 
 //var_dump(base_path('core/validator.php'));
 require base_path('core/validator.php');
@@ -45,7 +45,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $right['body'] = '留言成功';
     $result = $db->query('INSERT INTO notes(body, user_id) VALUES(:body, :user_id)',[
         'body' => $_POST['body'], //$_POST['body']name值 ... body->資料庫欄位
-        'user_id' => 1 //目前先寫死
+        'user_id' => $_SESSION['user_id'] //目前先寫死
     ]);
  }
 }

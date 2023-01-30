@@ -66,8 +66,8 @@ class Database
       'name_uid' => $uid
   ])->get();
   //dd($result);
-  //dd(!empty($result)); //空值為true
-  return !empty($result); //有值return false
+  //dd(!empty($result)); //
+  return !empty($result); //有值return 
   }
 
   public function addUser($name_uid, $password) { //加入使用者
@@ -80,12 +80,13 @@ class Database
 
   public function loginUser($uid, $password){
     $user = $this->query("SELECT * FROM users WHERE name_uid = :name_uid", [
-      'name_uid' => $uid
+      'name_uid' => $uid //確認有沒有該帳號
   ])->find();
   //dd($user);
   if($user){
       if(password_verify($password,$user['password'])){
           $_SESSION['user_id'] = $user['id'];
+          //dd($user);
           //dd($_SESSION['user_id']);
           return true;
       }else{
