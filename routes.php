@@ -9,6 +9,7 @@ return
     '/contact' => 'controllers/contact.php',
     '/messages' => 'controllers/notes/messages.php',
     '/signup' => 'controllers/signup.php',
-    '/login' => 'controllers/login.php'
+    '/login' => 'controllers/login.php',
+    '/logout' => 'controllers/logout.php'
 
 ];
