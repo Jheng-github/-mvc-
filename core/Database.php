@@ -97,4 +97,19 @@ class Database
       return false;
   }
   }
+  public function permissions($uid) { //確認權限
+    $user = $this->query("SELECT * FROM users WHERE name_uid = :name_uid", [
+        'name_uid' => $uid
+    ])->find();
+
+    if($user) {
+        if($user['permissions'] == 0) { //0是最高權限
+            return true;
+        } 
+    } else {
+        return false;
+    }
+}
+
+
 }

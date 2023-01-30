@@ -21,6 +21,6 @@ $notes = $db->query('select * from notes;') -> get(); //
 
 
 view("notes/messages.view.php",[
-    'heading' => 'All Notes',
+    'heading' => 'hello',
     'notes' => $notes
 ]);
