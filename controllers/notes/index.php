@@ -28,6 +28,6 @@ $notes = $db->query("select * from notes where user_id = :user_id;", ['user_id' 
 
 
 view("notes/index.view.php",[
-    'heading' => 'My Notes',
+    'heading' => 'Notes',
     'notes' => $notes
 ]);
