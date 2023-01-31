@@ -11,5 +11,5 @@ return
     '/signup' => 'controllers/signup.php',
     '/login' => 'controllers/login.php',
     '/logout' => 'controllers/logout.php'
-
+    //'/notes/edit/{id}' => 'controllers/notes/edit.php'
 ];
