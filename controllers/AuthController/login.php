@@ -1,10 +1,19 @@
 <?php
 //session_start();
+//namespace controllers\AuthController;
+
 use core\Database;
+//use model\UserModel as UserModel;
+use model\UserModel;
+
 //$heading ="Login in";
 var_dump(session_id());
+//dd($_SERVER);
 $config = require base_path('config.php');
 $db = new Database($config['database']);
+$data = new UserModel($config['database']);
+//$data = new \model\UserModel($config['database']);
+
 
 $error = [];
 
@@ -12,8 +21,8 @@ if (isset($_POST['submit'])) {
     $uid = $_POST['uid'];
     $password = $_POST['password'];
 
-    if ($db->loginUser($uid, $password)) {
-        $_SESSION['permissions'] = $db->permissions($uid); //判斷是否為最高權限
+    if ($data->loginUser($uid, $password)) {
+        $_SESSION['permissions'] = $data->permissions($uid); //判斷是否為最高權限
         //登入成功
         //跳轉到首頁
        //dd($_SESSION['permissions']);
