@@ -9,6 +9,7 @@ $db = new Database($config['database']); //在這邊產生根資料庫連地__co
 
 // $heading = "My Notes";
 //echo '1232132132dd';
+//dd($_SESSION['user_id']);
 if (!isset($_SESSION['user_id'])) {
     echo "<script>alert('請先登入'); location.href='login';</script>";
     exit;

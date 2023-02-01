@@ -65,7 +65,7 @@ class Database
     $result = $this->query("SELECT * FROM users WHERE name_uid = :name_uid", [
       'name_uid' => $uid
   ])->get();
-  //dd($result);
+  dd($result);
   //dd(!empty($result)); //
   return !empty($result); //有值return 
   }

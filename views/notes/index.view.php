@@ -10,6 +10,8 @@
         //var_dump($note);
         echo "<a href=/note?id=" . $note['id'] . " class='text-blue-500 hover:underline'>"
           . "<li>" . htmlspecialchars($note['body']) . "</li>" . "</a>";
+        echo "<p style=float:right;>".htmlspecialchars($note['time'])."</p>";
+        echo "<br>";
       }
       ?>
     </ul>
@@ -20,3 +22,8 @@
   </div>
 </main>
 <?php require base_path('views/partials/footer.php'); ?>
+
+<p style="float:right;">
+      <?php echo htmlspecialchars($note['time']); ?>
+
+    </p>

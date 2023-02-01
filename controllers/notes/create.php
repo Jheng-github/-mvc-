@@ -24,17 +24,21 @@ $right = [];
 //輸入的值不可為0 or 多餘500字  這兩個條件以外才能加入資料庫
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     //dd($_POST);//表單收到的form值 
-//dd($_POST);
-  if(! Validator::string($_POST['edit'],1 , 500)){
+date_default_timezone_set("Asia/Taipei");
+
+//dd(date('Y-m-d H:i:s'));
+  if(! Validator::string($_POST['body'],1 , 500)){
         $errors['body'] = '字數不可大於500字或者沒有輸入';
     }
     
     if(empty($errors)){ //如果error是空的,就代表他在上面if都沒卡關,可以輸入進去資料庫
         $right['body'] = '留言成功';
-    $result = $db->query('INSERT INTO notes(body, user_id) VALUES(:body, :user_id)',[
-        'body' => $_POST['body'], //$_POST['body']name值 ... body->資料庫欄位
-        'user_id' => $_SESSION['user_id'] //
-    ]);
+        $result = $db->query('INSERT INTO notes(body, user_id,time) VALUES(:body, :user_id, :time)',[
+            'body' => $_POST['body'], //$_POST['body']name值 ... body->資料庫欄位
+            'user_id' => $_SESSION['user_id'], //
+            'time' => date('Y-m-d H:i:s')
+           // date('Y-m-d H:i:s')
+        ]);
  }
  //dd($notes);
 }

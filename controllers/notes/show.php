@@ -23,6 +23,8 @@ $errors = [];
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     //$db->query('select * from notes where id = :id',['id'=>$id ]) -> findOrFail();
     $note = $db->query('select * from notes where id = :id', ['id' => $id])->findOrFail();
+    //$user = $db->query('select * from users where id = :id', ['id' => $id])->findOrFail();
+    //dd($user);
     //dd($note);
     //echo  $_POST['edit'];
     if (isset($_POST['delete'])) {
