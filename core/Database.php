@@ -27,11 +27,11 @@ class Database
     }
 
 
-    public function query($query, $params = [])
+    public function query($sql, $params = [])
     {
 
         //$statement = $pdo->prepare($query)
-        $this->statement = $this->connection->prepare($query);
+        $this->statement = $this->connection->prepare($sql);
         //var_dump($this->statement);
         //echo "<BR>";
         $this->statement->execute($params);// 陣列使用ex[uesr_id=>id]

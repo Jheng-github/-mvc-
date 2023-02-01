@@ -1,17 +1,21 @@
 <?php
 
 use core\Database;
-
+use model\CrudModel;
 
 $config = require base_path('config.php');
-$db = new Database($config['database']); //在這邊產生根資料庫連地__connection , 
+//$db = new Database($config['database']); //在這邊產生根資料庫連地__connection , 
+//dd($config);
+$db = new CRUDModel($config['database']);
 //dd($db); //確認有東西
-
+//dd($db);
 // $heading = "My Notes";
 
 
 
-$notes = $db->query('select * from notes;') -> get(); //
+//$notes = $db->query('select * from notes;') -> get(); //
+$notes = $db->getAllMsg();
+
 
 //dd($notes); //確認有取得資料user_id = 1 的資料
 
