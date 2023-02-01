@@ -10,8 +10,7 @@ function abort($code = 404){
     require base_path("views/$code.php")    ;
     die();
 }
-
-
+//dd(base_path($routes[$uri]));
 //var_dump($routes[$uri]);
 function routeToController($uri, $routes){
 if (array_key_exists($uri, $routes)){ //檢查routes的key值是否存在於uri中 

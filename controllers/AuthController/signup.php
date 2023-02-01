@@ -27,7 +27,7 @@ if (isset($_POST['submit'])) {
 }
 
 
-view("signup.view.php", 
+view("AuthView/signup.view.php", 
 [
     'heading' => '註冊',
     'error' => $error 

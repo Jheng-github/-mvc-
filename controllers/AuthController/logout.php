@@ -11,7 +11,7 @@ var_dump(session_id());
 session_destroy();
 header('Location: /');
 
-view("logout.view.php",[
+view("AuthView/logout.view.php",[
     'heading' => '登入',
     'error' => $error
 ]);

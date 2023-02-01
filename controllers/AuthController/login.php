@@ -24,7 +24,7 @@ if (isset($_POST['submit'])) {
     }
 //require base_path("views/index.view.php"); //PHP -S 
 
-view("login.view.php",[
+view("AuthView/login.view.php",[
     'heading' => '您已經登入',
     'error' => $error
 ]);

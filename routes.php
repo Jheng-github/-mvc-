@@ -8,8 +8,8 @@ return
     '/notes/create' => 'controllers/notes/create.php',
     '/contact' => 'controllers/contact.php',
     '/messages' => 'controllers/notes/messages.php',
-    '/signup' => 'controllers/signup.php',
-    '/login' => 'controllers/login.php',
-    '/logout' => 'controllers/logout.php'
+    '/signup' => 'controllers/AuthController/signup.php',
+    '/login' => 'controllers/AuthController/login.php',
+    '/logout' => 'controllers/AuthController/logout.php'
     //'/notes/edit/{id}' => 'controllers/notes/edit.php'
 ];

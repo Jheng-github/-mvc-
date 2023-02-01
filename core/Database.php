@@ -65,9 +65,9 @@ class Database
     $result = $this->query("SELECT * FROM users WHERE name_uid = :name_uid", [
       'name_uid' => $uid
   ])->get();
-  dd($result);
-  //dd(!empty($result)); //
-  return !empty($result); //有值return 
+  //dd($result);
+  //dd(!empty($result)); //empty空值為true,加上!讓他變成false,透過false進入else,增加使用者
+  return !empty($result); //
   }
 
   public function addUser($name_uid, $password) { //加入使用者
@@ -78,13 +78,13 @@ class Database
     ]);
 }
 
-  public function loginUser($uid, $password){
+  public function loginUser($uid, $password){ //使用者登入
     $user = $this->query("SELECT * FROM users WHERE name_uid = :name_uid", [
       'name_uid' => $uid //確認有沒有該帳號
-  ])->find();
+    ])->find();
   //dd($user);
-  if($user){
-      if(password_verify($password,$user['password'])){
+  if($user){//如果有使用者,回傳true
+      if(password_verify($password,$user['password'])){//確認hash密碼是否跟資料庫一致
           $_SESSION['user_id'] = $user['id'];
           $_SESSION['name'] = $user['name_uid'];
           //dd($user);
@@ -103,7 +103,7 @@ class Database
     ])->find();
 
     if($user) {
-        if($user['permissions'] == 0) { //0是最高權限
+        if($user['permissions'] == 0) { //資料庫0是最高權限
             return true;
         } 
     } else {
