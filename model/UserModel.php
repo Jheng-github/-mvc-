@@ -50,7 +50,7 @@ class UserModel extends Database
     ])->find();
 
     if($user) {
-        if($user['permissions'] == 0) { //資料庫0是最高權限
+        if($user['permissions'] == 1) { //資料庫0是最高權限
             return true;
         } 
     } else {

@@ -21,6 +21,10 @@ if (!isset($_SESSION['user_id'])) { //登入的時候有把資料庫的值灌到
 $notes = $db->query("select * from notes where user_id = :user_id;", ['user_id' => $_SESSION['user_id']]) 
 -> get(); //取得所有user_id 資料
 
+// $notes = $db->query("select * from notes where user_id = :user_id;", ['user_id' => $user['id']]) 
+// -> get(); //取得所有user_id 資料
+
+
 //dd($notes); //確認有取得資料user_id 的資料
 
 

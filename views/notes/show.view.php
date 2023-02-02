@@ -9,7 +9,7 @@
 
 
     <p style="float:right;">
-      <?php echo htmlspecialchars($note['time']); ?>
+      <?php echo $note['time']; ?>
 
     </p>
     <p>
