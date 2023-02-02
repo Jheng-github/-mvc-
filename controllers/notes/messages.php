@@ -14,7 +14,7 @@ $db = new CRUDModel($config['database']);
 
 
 //$notes = $db->query('select * from notes;') -> get(); //
-$notes = $db->getAllMsg();
+$notes = $db->getAllMsg();//取得所有留言
 
 
 //dd($notes); //確認有取得資料user_id = 1 的資料

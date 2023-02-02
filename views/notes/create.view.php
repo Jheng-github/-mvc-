@@ -37,6 +37,9 @@
                                       if(isset($errors['body'])) { // note-create 裡面抓出如果筆記本為0 or字數太多顯示出來的
                                       echo "<p class='text-red-600 text-xl mt-2'>".$errors['body']."</p>";
                                       }
+                                      if(isset($right['body'])) { // note-create 裡面抓出如果筆記本為0 or字數太多顯示出來的
+                                        echo "<p class='text-red-600 text-xl mt-2'>". $right['body']."</p>";
+                                        }
                                     //   if(empty($errors['body'])){ 
                               
                                     //     var_dump($right['body']);
