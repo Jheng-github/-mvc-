@@ -44,7 +44,7 @@ class UserModel extends Database
       return false;
   }
   }
-  public function permissions($uid) { //確認權限
+   public function permissions($uid) { //確認權限
     $user = $this->query("SELECT * FROM users WHERE name_uid = :name_uid", [
         'name_uid' => $uid
     ])->find();
@@ -57,4 +57,20 @@ class UserModel extends Database
         return false;
     }
 }
+
+// public function permissions($uid, $is_admin = false) { //確認權限
+//     $user = $this->query("SELECT * FROM users WHERE name_uid = :name_uid", [
+//         'name_uid' => $uid
+//     ])->find();
+
+//     if($user) {
+//         if($user['permissions'] == 0 || $is_admin) { //資料庫0是最高權限，或是有管理員權限
+//             return true;
+//         } 
+//     } else {
+//         return false;
+//     }
+// }
+
+
 }

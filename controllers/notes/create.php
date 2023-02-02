@@ -2,13 +2,16 @@
 
 use core\Database;
 use core\Validator;
+use model\CRUDModel;
+
 var_dump(session_id());
 
 //var_dump(base_path('core/validator.php'));
 require base_path('core/validator.php');
 
 $config = require base_path('config.php');
-$db = new Database($config['database']);
+//$db = new Database($config['database']);
+$db = new CRUDModel($config['database']);
 
 
 //$heading ='Create Note';
@@ -33,11 +36,14 @@ date_default_timezone_set("Asia/Taipei");
     
     if(empty($errors)){ //如果error是空的,就代表他在上面if都沒卡關,可以輸入進去資料庫
         $right['body'] = '留言成功。2秒後跳轉';
-        $result = $db->query('INSERT INTO notes(body, user_id,time) VALUES(:body, :user_id, :time)',[
-            'body' => $_POST['body'], //$_POST['body']name值 ... body->資料庫欄位
-            'user_id' => $_SESSION['user_id'], //
-            'time' => date('Y-m-d H:i:s')
-        ]);
+        // $result = $db->query('INSERT INTO notes(body, user_id,time) VALUES(:body, :user_id, :time)',[
+        //     'body' => $_POST['body'], //$_POST['body']name值 ... body->資料庫欄位
+        //     'user_id' => $_SESSION['user_id'], //
+        //     'time' => date('Y-m-d H:i:s')
+        // ]);
+            $result = $db->addMsg();//把留言加入資料庫
+
+
         //header('location: /notes');
         header('Refresh: 2; url=/notes');
  }

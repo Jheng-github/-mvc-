@@ -10,14 +10,26 @@ class CRUDModel{
    public function __construct($config)
    {
 
-    $this->db = NEW Database($config);
+    $this->db = NEW Database($config);//使用namespace use 來在建構式實例化
    }
 
-   public function getAllMsg(){
+   public function getAllMsg(){//取得所有留言/read
     $note = $this->db->query('select * from notes;') -> get();
 
     return $note;
    }
+   public function addMsg(){ //新增留言/create
+     $result = $this->db->query('INSERT INTO notes(body, user_id,time) VALUES(:body, :user_id, :time)',[
+         'body' => $_POST['body'], //$_POST['body']name值 ... body->資料庫欄位
+         'user_id' => $_SESSION['user_id'], //
+         'time' => date('Y-m-d H:i:s')
+     ]);
+     return $result; 
+    // return $tihs;
+      }
+   public function deleteMsg(){
+      
+   }
 
-   
+
 }
