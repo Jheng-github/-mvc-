@@ -18,10 +18,10 @@ class Database
 
        $dsn = "mysql:host={$config['host']};port={$config['port']};dbname={$config['dbname']};charset={$config['charset']}";
         $user = 'jheng';
-        $pwd = '122737420';
+        $pwd = '';
 
         //$pdo = new PDO($dsn, $user, $pwd);
-          $this->connection = new PDO($dsn, "$user", "$pwd",[
+          $this->connection = new PDO($dsn, "$user", "",[
             PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_ASSOC
           ]); 
     }

@@ -5,7 +5,7 @@
   <main>
     <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
       <!-- Replace with your content -->
-        <p>hello welcome Jheng life is shit</p>
+        <p>主要練習註冊,登入,session,筆記留言</p>
     </div>
   </main>
   <?php require 'partials/footer.php'; ?>
