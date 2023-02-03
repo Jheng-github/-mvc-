@@ -23,7 +23,7 @@
     ?>
     <!--用form表單來建立刪除-->
     <form class=mt-5 method="post">
-      <input type="hidden" name='id' value="<?php echo $note['id'] ?>"></input>
+    <input type="hidden" name='id' value="<?php echo $note['id'] ?>"></input> 
       <button type='submit' name='delete' class="text-red-900">刪除筆記</button>
       &nbsp;&nbsp;
       <button type='submit' name='edit' class="text-red-900">編輯筆記</button>

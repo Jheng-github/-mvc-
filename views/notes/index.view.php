@@ -12,10 +12,12 @@
       foreach ($notes as $note) { //讀取列表,利用note.php讀取利便出來,做連結接著點入之後會導到note.php各個文件裡面
         //dd($note);從資料庫取得文章id
         //dd($_SERVER);
-        echo "<a href=/note?id=" . $note['id'] . " class='text-blue-500 hover:underline'>"
+
+        echo "<a href=/note?id=" . $note['id'] ." class='text-blue-500 hover:underline'>"
           . "<li>" . htmlspecialchars($note['body']) . "</li>" . "</a>";
         echo "<p style=float:right;>".$note['time']."</p>";
-       // echo "唧唧唧唧唧歪歪歪";
+        //echo "唧唧唧唧唧歪歪歪";
+        //echo $note['id'];
         echo "<br>";
       }
       ?>

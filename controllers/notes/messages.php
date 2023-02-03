@@ -10,12 +10,17 @@ $db = new CRUDModel($config['database']);
 //dd($db); //確認有東西
 //dd($db);
 // $heading = "My Notes";
+if (!isset($_SESSION['user_id'])) { //登入的時候有把資料庫的值灌到session,如果沒有就請他先登入
+    echo "<script>alert('結語不要亂玩'); location.href='login';</script>";
+   // header('location: /login');
+    exit;
+  }
 
 
 
 //$notes = $db->query('select * from notes;') -> get(); //
 $notes = $db->getAllMsg();//取得所有留言
-
+//dd($notes);
 
 //dd($notes); //確認有取得資料user_id = 1 的資料
 

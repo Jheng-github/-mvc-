@@ -14,10 +14,13 @@ $db = new CrudModel($config['database']);
 //$currentUserId =1;
 //echo $_SESSION['user_id'];
 
-// $heading = "Note";
+
+//dd($_POST);
+
+//dd($note['id']);
 $id = $_GET['id']; // foreach note['id']
 //dd($id);
-//$note = $db->query('select * from notes where id = :id',['id'=>$id ]) -> findOrFail();
+
 
 //dd($_SERVER);
 //dd($id);
@@ -27,6 +30,7 @@ $right = [];
 $errors = [];
 //dd($_SERVER['REQUEST_METHOD']);//get
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
     //dd($_SERVER['REQUEST_METHOD']);//POST
 
     //$note = $db->query('select * from notes where id = :id', ['id' => $id])->findOrFail();
@@ -83,15 +87,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     //$note = $db->query('select * from notes where id = :id', ['id' => $id])->findOrFail();
     $note = $db->getOneMsg($id);//取得一筆留言
-
+    //echo "fff";
     //dd($_SESSION['user_id']);
     //dd($note);
     //dd($note);
 
-
-    authorize($note['user_id'] == $_SESSION['user_id']);  // 包裝下方
+//dd($_SERVER);
+     authorize(($note['user_id'] == $_SESSION['user_id']) || ($_SESSION['permissions'] == 1));  // 包裝下方
+    //authorize(($note['user_id'] == $_SESSION['user_id']));  // 包裝下方
     view("notes/show.view.php", [
-        'heading' => 'Note',
+        'heading' => 'No~~te',
         'note' => $note
     ]);
+    //dd($_SERVER);
 }
