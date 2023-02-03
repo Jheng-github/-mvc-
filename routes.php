@@ -10,6 +10,8 @@ return
     '/messages' => 'controllers/notes/messages.php',
     '/signup' => 'controllers/AuthController/signup.php',
     '/login' => 'controllers/AuthController/login.php',
-    '/logout' => 'controllers/AuthController/logout.php'
+    '/logout' => 'controllers/AuthController/logout.php',
+    //'/login' => 'controllers/AuthController/AuthController.php',
+    //'/logout' => 'controllers/AuthController/AuthController.php'
     //'/notes/edit/{id}' => 'controllers/notes/edit.php'
 ];

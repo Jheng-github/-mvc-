@@ -5,16 +5,23 @@
 use core\Database;
 //use model\UserModel as UserModel;
 use model\UserModel;
-
+use controllers\AuthController;
 //$heading ="Login in";
 var_dump(session_id());
 //dd($_SERVER);
+//echo 'efefefe3';
 $config = require base_path('config.php');
+//dd($config);
 $db = new Database($config['database']);
 $data = new UserModel($config['database']);
 //$data = new \model\UserModel($config['database']);
+//echo 'efefefe3';
+
+//$data = new AuthController($config['database']);
+//$data->login();
 
 
+//---------------------------------------------
 $error = [];
 
 if (isset($_POST['submit'])) {
