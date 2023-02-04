@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     //$note = $db->query('select * from notes where id = :id', ['id' => $id])->findOrFail();
     $note = $db->getOneMsg($id);//取得一筆留言
-    //echo "fff";
+    //  echo "fff";
     //dd($_SESSION['user_id']);
     //dd($note);
     //dd($note);

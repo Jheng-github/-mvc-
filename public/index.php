@@ -11,7 +11,7 @@ require BASE_PATH .'core/function.php'; //因為base_path 是在funciton裡面�
 spl_autoload_register(function($class){
     //dd($class);core\Database
     $result = str_replace('\\',DIRECTORY_SEPARATOR,$class);
-    //dd($result);
+  //dd($result);
     require base_path($result.".php");
 });
 
