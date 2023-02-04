@@ -1,5 +1,6 @@
 <?php
- namespace controllers\AuthController;
+
+namespace controllers\AuthController;
 //namespace controllers;
 
 
@@ -40,30 +41,42 @@ class AuthController
     }
 
 
-    public function logout()
+    public function logout()//登出
     {
-         session_destroy();
+        session_destroy();
         // var_dump('hi');
-         echo "<script>alert('已登出,點擊後回首頁'); location.href='/';</script>";
-         exit();
-         header("Location: /");
-        // var_dump(session_id());
-       
-        //session_start();
+        echo "<script>alert('已登出,點擊後回首頁'); location.href='/';</script>";
+        exit();
+        header("Location: /");
+    }
 
-      // 砍掉舊的 session
-        //session_destroy();
-       // if ( session_destroy()){
-        // 重新導向回首頁
-        
-       // exit;
-    //}
+    public function signup()//註冊
+    {
+        //$error = [];
 
 
-     
-       //exit();
-        // view("AuthView/logout.view.php", [
-        //     //'heading' => ''
-        // ]);
+        if (isset($_POST['submit'])) {
+            $uid = $_POST['uid'];
+            $pwd = $_POST['password'];
+            $pwdrepeat = $_POST['passwordrepeat'];
+            $email = $_POST['email'];
+            if ($pwd !== $pwdrepeat) {
+                $this->error['password'] = "兩次密碼輸入不相同,請重新輸入";
+            }
+            if ($this->data->checkUser($uid)) { //$POST進來的值
+                $this->error['uid'] = "帳號已存在請重新輸入";
+            } else {
+                $this->data->addUser($uid, $pwd); //如果沒值就筆POST來的值加入進去
+            }
+        }
+
+
+        view(
+            "AuthView/signup.view.php",
+            [
+                'heading' => '註冊',
+                'error' => $this->error
+            ]
+        );
     }
 }

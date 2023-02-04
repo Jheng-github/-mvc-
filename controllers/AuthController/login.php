@@ -6,20 +6,7 @@ use controllers\AuthController\AuthController;
 $data = new AuthController($config['database']);
 //dd($data);
 $data->login();
-
-
-
-//use core\Database;
-
-use model\UserModel;
-//  use controllers\AuthController;
-
 var_dump(session_id());
-
-
-//dd($config);
-//$db = new Database($config['database']);
-//$data = new UserModel($config['database']);
 
 
 
