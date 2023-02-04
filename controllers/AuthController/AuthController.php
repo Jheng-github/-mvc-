@@ -62,12 +62,14 @@ class AuthController
             $email = $_POST['email'];
             if ($pwd !== $pwdrepeat) {
                 $this->error['password'] = "兩次密碼輸入不相同,請重新輸入";
+                
             }
             if ($this->data->checkUser($uid)) { //$POST進來的值
                 $this->error['uid'] = "帳號已存在請重新輸入";
-            } else {
-                $this->data->addUser($uid, $pwd); //如果沒值就筆POST來的值加入進去
-            }
+                
+            } if (empty($this->error)) {
+                $this->data->addUser($uid, $pwd);
+                }//如果沒error來的值加入進去
         }
 
 
