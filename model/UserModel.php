@@ -34,8 +34,8 @@ class UserModel extends Database
       if(password_verify($password,$user['password'])){//確認hash密碼是否跟資料庫一致
           $_SESSION['user_id'] = $user['id'];
           $_SESSION['name'] = $user['name_uid'];
-          //dd($user);
-          //dd($_SESSION['user_id']);
+          $_SESSION['permissions'] = $user['permissions'];
+          //dd($_SESSION);
           return true;
       }else{
           return false;

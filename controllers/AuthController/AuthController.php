@@ -24,7 +24,7 @@ class AuthController
             $password = $_POST['password'];
 
             if ($this->data->loginUser($uid, $password)) {
-                $_SESSION['permissions'] = $this->data->permissions($uid);
+                $_SESSION['permissions'] = $this->data->permissions($uid); //權限判斷,true or false 放到session
                 header("Location: /");
             } else {
                 $this->error['fail'] = "帳號或密碼錯誤，請重新輸入。";

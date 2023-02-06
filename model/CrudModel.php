@@ -19,6 +19,12 @@ class CRUDModel{
       return $note;
    }
 
+   public function getUserMsg(){
+     $notes = $this->db->query("select * from notes where user_id = :user_id;", ['user_id' => $_SESSION['user_id']]) 
+     -> get(); //取得所有user_id 資料
+     return $notes;
+
+   }
 
 
    public function getAllMsg(){//取得所有留言/read
