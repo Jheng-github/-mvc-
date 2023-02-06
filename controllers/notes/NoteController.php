@@ -1,6 +1,6 @@
 <?php
 
-namespace controllers\Notes;
+namespace controllers\notes;
 
 use model\CRUDModel;
 use model\UserModel;

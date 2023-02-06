@@ -3,7 +3,7 @@
 use core\Database;
 use core\Validator;
 use model\CRUDModel;
-use controllers\Notes\NoteController;
+use controllers\notes\NoteController;
 
 $config = require base_path('config.php');
 //$db = new Database($config['database']); //在這邊產生根資料庫連地__connection , 

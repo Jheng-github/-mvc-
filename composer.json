@@ -1,0 +1,17 @@
+{
+    "name": "jheng/web",
+    "autoload": {
+        "psr-4": {
+           "core\\": "core/",
+           "controllers\\": "controllers/",
+           "model\\": "model/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jheng",
+            "email": "a0960073588@gmail.com"
+        }
+    ],
+    "require": {}
+}

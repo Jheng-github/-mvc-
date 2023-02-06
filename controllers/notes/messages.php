@@ -5,7 +5,7 @@ $config = require base_path('config.php');
 //use model\CrudModel;
 //$db = new CRUDModel($config['database']);
 
-use controllers\Notes\NoteController;
+use controllers\notes\NoteController;
 
 $data = new NoteController($config['database']);
 $data->showAllMeg();//取得所有留言

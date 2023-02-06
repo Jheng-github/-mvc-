@@ -2,8 +2,11 @@
 
 namespace core;
 
+//use Dotenv\Dotenv;
 use PDO;
 
+// $dotenv = Dotenv::createImmutable(__DIR__);
+// $dotenv->load();
 
 class Database
 {
@@ -11,6 +14,19 @@ class Database
     public $connection;
 
     public $statement;
+
+    // public function __construct($config)
+    // {
+
+    //    $dsn = "mysql:host={$config['host']};port={$config['port']};dbname={$config['dbname']};charset={$config['charset']}";
+    //     $user = 'jheng';
+    //     $pwd = '';
+    //     $dsn = "mysql:host=$this->host;port=3306;dbname=$this->dbname;charset=utf8mb4";
+    //     //$pdo = new PDO($dsn, $user, $pwd);
+    //       $this->connection = new PDO($dsn, "$user", "",[
+    //         PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_ASSOC
+    //       ]); 
+    // }
 
 
     public function __construct($config)

@@ -3,7 +3,7 @@
 use core\Database;
 use core\Validator;
 use model\CRUDModel;
-use controllers\Notes\NoteController;
+use controllers\notes\NoteController;
 
 
 var_dump(session_id());

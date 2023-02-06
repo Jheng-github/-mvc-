@@ -2,32 +2,15 @@
 var_dump(session_id());
 use core\Database;
 use model\CrudModel;
-use controllers\Notes\NoteController;
+use controllers\notes\NoteController;
 
 $config = require base_path('config.php');
 
 //$data = new CRUDModel($config['database']);
 //$db = new Database($config['database']); //在這邊產生根資料庫連地__connection , 
 $data = new NoteController($config['database']);
+//$data = new controllers\notes\NoteController($config['database']);
 $data->showUserMsg();
-
-
-// if (!isset($_SESSION['user_id'])) { //登入的時候有把資料庫的值灌到session,如果沒有就請他先登入
-//        echo "<script>alert('請先登入'); location.href='login';</script>";
-//        exit;
-//     }
-
-// $notes = $data->getUserMsg();
-
-// view("notes/index.view.php",[
-//      'heading' => 'Notdes',
-//      'notes' => $notes
-//  ]);
-
-
-
-
-
 
 
 // -------------------------------------
