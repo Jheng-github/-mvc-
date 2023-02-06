@@ -2,9 +2,6 @@
 
 namespace controllers\AuthController;
 //namespace controllers;
-
-
-
 use model\UserModel;
 //echo 'ff';
 use core\Database;

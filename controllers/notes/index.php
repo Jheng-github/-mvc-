@@ -20,7 +20,7 @@ if (!isset($_SESSION['user_id'])) { //登入的時候有把資料庫的值灌到
 
 $notes = $db->query("select * from notes where user_id = :user_id;", ['user_id' => $_SESSION['user_id']]) 
 -> get(); //取得所有user_id 資料
-
+//dd($notes);
 // $notes = $db->query("select * from notes where user_id = :user_id;", ['user_id' => $user['id']]) 
 // -> get(); //取得所有user_id 資料
 
@@ -33,6 +33,6 @@ $notes = $db->query("select * from notes where user_id = :user_id;", ['user_id' 
 
 
 view("notes/index.view.php",[
-    'heading' => 'Notes',
+    'heading' => 'Notdes',
     'notes' => $notes
 ]);
