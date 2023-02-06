@@ -15,19 +15,20 @@
               <a href="/about" class="text-gray-300  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About us</a>
 
             <?PHP  if (isset($_SESSION['permissions'])) {
-  echo '<a href="/messages" class="text-gray-300  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">all message</a>';
-}
-?>
+         echo '<a href="/messages" class="text-gray-300  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">all message</a>';
+           } ?>
               <a href="/notes" class="text-gray-300  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Notes</a>
 
               <a href="/contact" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
-
-              <a href="/signup" class="text-gray-300  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">註冊</a>
-
-              <a href="/login" class="text-gray-300  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">登入</a>
+          <?php if (empty($_SESSION['user_id'])) {
+         echo   '<a href="/signup" class="text-gray-300  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">註冊</a>';
+           } ?>
+                <?php if (empty($_SESSION['user_id'])) {
+         echo   '<a href="/login" class="text-gray-300  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">登入</a>';
+           } ?>
               <?php if (isset($_SESSION['user_id'])) {
-  echo  '<a href="/logout" class="text-gray-300  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">登出</a>';
-              } ?>
+         echo  '<a href="/logout" class="text-gray-300  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">登出</a>';
+           } ?>
             </div>
           </div>
         </div>
