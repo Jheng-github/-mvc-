@@ -3,7 +3,7 @@
 use core\Database;
 use controllers\SignupController;
 use model\UserModel;
-var_dump(session_id());
+//var_dump(session_id());
 
 use controllers\AuthController\AuthController;
 $config = require base_path('config.php');

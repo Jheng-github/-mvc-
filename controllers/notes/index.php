@@ -1,5 +1,5 @@
 <?php
-var_dump(session_id());
+//var_dump(session_id());
 use core\Database;
 use model\CrudModel;
 use controllers\notes\NoteController;

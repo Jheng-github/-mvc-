@@ -6,7 +6,7 @@ use controllers\AuthController\AuthController;
 $data = new AuthController($config['database']);
 //dd($data);
 $data->login();
-var_dump(session_id());
+//var_dump(session_id());
 
 
 
