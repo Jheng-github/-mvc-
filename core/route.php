@@ -1,6 +1,7 @@
 <?php
 $routes = require base_path('routes.php');
 //dd($_SERVER);
+//dd(parse_url($_SERVER["REQUEST_URI"]));
 $uri = parse_url($_SERVER["REQUEST_URI"])['path'];; // 抓取uri localhost8888後面的值  / or /about...等
 // var_dump($uri);
 // echo "<br>";

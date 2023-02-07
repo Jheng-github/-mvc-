@@ -46,7 +46,7 @@ class NoteController
                 $this->errors['body'] = '字數不可大於500字或者沒有輸入';
             }
 
-            if (empty($errors)) { //如果error是空的,就代表他在上面if都沒卡關,可以輸入進去資料庫
+            if (empty($this->errors)) { //如果error是空的,就代表他在上面if都沒卡關,可以輸入進去資料庫
                 $this->right['body'] = '留言成功。2秒後跳轉';
                 $this->data->addMsg(); //把留言加入資料庫
 
@@ -98,8 +98,8 @@ class NoteController
                 //dd($note);
                 if (!Validator::string($_POST['edit'], 1, 500)) {
                     $errors['body'] = '字數不可大於500字或者沒有輸入';
+                    
                 }
-
                 if (empty($errors)) {
    
                     $result = $this->data->updateMsg($id); //更新留言
@@ -109,6 +109,7 @@ class NoteController
 
                     header('Refresh: 2; url=/notes');
                 }
+            
             }
             view("notes/edit.view.php", [
                 'heading' => 'edit Note',

@@ -1,6 +1,6 @@
 <?php
 session_start();
-var_dump(__DIR__);
+//var_dump(__DIR__);
 
 const BASE_PATH = __DIR__ . '/../';
 
@@ -13,7 +13,7 @@ require BASE_PATH .'core/function.php'; //因為base_path 是在funciton裡面�
 require base_path("vendor/autoload.php");
 //"/Users/jheng/Sites/web/public/../vendor/autoload.php"
 require base_path('core/route.php');
-
+//echo 'ff';
 //dd(BASE_PATH);
 // spl_autoload_register(function($class){
 //     //dd($class);core\Database
