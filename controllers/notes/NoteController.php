@@ -20,10 +20,8 @@ class NoteController
     public function showAllMeg()
     {
         //dd($_SESSION['permissions']);
-        if (!isset($_SESSION['user_id']) || ($_SESSION['permissions'] != 1)) { //
-            // if (!($_SESSION['user_id'] == )) { 
+        if (!isset($_SESSION['user_id']) || ($_SESSION['permissions'] != 1)) { 
             echo "<script>alert('結語不要亂玩'); location.href='login';</script>";
-            // header('location: /login');
             exit;
         }
 
@@ -38,6 +36,11 @@ class NoteController
     }
     public function createMsg()
     {
+        if (!isset($_SESSION['user_id'])) { 
+            echo "<script>alert('will不要亂玩'); location.href='login';</script>";
+            exit;
+        }
+        
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             date_default_timezone_set("Asia/Taipei");
 

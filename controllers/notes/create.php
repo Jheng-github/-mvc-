@@ -7,7 +7,7 @@ use controllers\notes\NoteController;
 
 
 //var_dump(session_id());
-require base_path('core/validator.php');
+//require base_path('core/validator.php');
 //var_dump(base_path('core/validator.php'));
 
 
