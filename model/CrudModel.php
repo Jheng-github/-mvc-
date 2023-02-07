@@ -29,8 +29,10 @@ class CRUDModel{
 
    public function getAllMsg(){//取得所有留言/read
     $note = $this->db->query('select * from notes;') -> get();
-
     return $note;
+   // $note = $this->db->query("select * from notes limit {$offset}, {$per_page};") -> get();
+   // return $note;
+
    }
    public function addMsg(){ //新增留言/create
      $result = $this->db->query('INSERT INTO notes(body, user_id,time) VALUES(:body, :user_id, :time)',[

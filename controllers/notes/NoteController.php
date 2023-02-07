@@ -24,15 +24,13 @@ class NoteController
             echo "<script>alert('結語不要亂玩'); location.href='login';</script>";
             exit;
         }
+        $notes = $this->data->getAllMsg(); //取得所有留言   
 
-        //$notes = $db->query('select * from notes;') -> get(); //
-        $notes = $this->data->getAllMsg(); //取得所有留言
-        //dd($notes); //確認有取得資料user_id = 1 的資料
 
         view("notes/messages.view.php", [
             'heading' => 'hello',
-            'notes' => $notes
-        ]);
+            'notes' => $notes,
+                ]);
     }
     public function createMsg()
     {
@@ -40,7 +38,7 @@ class NoteController
             echo "<script>alert('will不要亂玩'); location.href='login';</script>";
             exit;
         }
-        
+
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             date_default_timezone_set("Asia/Taipei");
 
