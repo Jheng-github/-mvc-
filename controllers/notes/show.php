@@ -10,8 +10,10 @@ $config = require base_path('config.php');
 //$db = new CrudModel($config['database']);
 $data = new NoteController($config['database']);
 
+if($_GET == null){
+    abort(404);
+}
 
-//dd($_POST);
 
 //dd($note['id']);
 $id = $_GET['id']; //

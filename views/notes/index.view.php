@@ -23,7 +23,7 @@
       ?>
     </ul>
     <p class="mt-6">
-      <a href="/notes/create" class="text-blue-500 hover:underline">Creat Note</a>
+      <a href="/notes/create" class="text-blue-500 hover:underline">來留言</a>
 
     </p>
   </div>
