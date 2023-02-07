@@ -19,7 +19,7 @@
             <br>
             <label  for="email">填入信箱:</label>
             <input  class='mt-6' type="email" id="email" name="email" placeholder="E-mail" required>
-
+            <?php if(isset($resp['right'])) echo "<p class='text-red-600 text-m mt-2'>".$resp['right']."</p>";  ?>
             <br><br>
            <!-- <input class='mt-6' type="submit" value="登入"> -->
             <button type="submit" name="submit" class="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">註冊</button>

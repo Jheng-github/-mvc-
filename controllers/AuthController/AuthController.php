@@ -10,6 +10,7 @@ class AuthController
 {
     private $data;
     private $error = [];
+    private $resp = [];
 
     public function __construct($config) //進行資料庫連線
     {
@@ -66,6 +67,8 @@ class AuthController
                 
             } if (empty($this->error)) {
                 $this->data->addUser($uid, $pwd);
+                $this->resp['right']= "註冊成功,請重新登入";
+                header('Refresh: 1; url=/notes');
                 }//如果沒error來的值加入進去
         }
 
@@ -74,7 +77,8 @@ class AuthController
             "AuthView/signup.view.php",
             [
                 'heading' => '註冊',
-                'error' => $this->error
+                'error' => $this->error,
+                'resp' => $this->resp
             ]
         );
     }

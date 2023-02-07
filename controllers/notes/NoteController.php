@@ -73,7 +73,7 @@ class NoteController
             echo "<script>alert('請先登入'); location.href='login';</script>";
             exit;
         }
-
+        
         $notes = $this->data->getUserMsg();
 
         view("notes/index.view.php", [
@@ -120,7 +120,9 @@ class NoteController
         } else {
        
             $note = $this->data->getOneMsg($id); //取得一筆留言
-
+            if(!isset($_SESSION['user_id']) && !isset($_SESSION['permissions'])){
+                abort(403);
+            }
             authorize(($note['user_id'] == $_SESSION['user_id']) || ($_SESSION['permissions'] == 1));  // 包裝下方
  
             view("notes/show.view.php", [
