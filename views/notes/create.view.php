@@ -27,6 +27,8 @@
                                         class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
 
                                         placeholder="芭芭拉芭芭拉...."
+
+                                        maxlength="500"
                                       ><?php //如果表單裡面的值裡原本就有,那就會繼續保持存在,不會送出之後不見.
                                       //var_dump($_POST);
                                        if(isset($_POST['body'])){
