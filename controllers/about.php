@@ -1,14 +1,7 @@
 <?php
 
- $heading = "About us";
-// echo "<PRE>";
-// var_dump($_SERVER); 
+$heading = "About us";
 
-
-//require "../views/about.view.php"; //用本地端要這樣
-
-//require 'views/about.view.php'; //php -S localhost
-
-view("about.view.php",[
+view("about.view.php", [
     'heading' => 'About us'
 ]);

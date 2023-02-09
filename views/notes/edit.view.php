@@ -42,10 +42,6 @@
                                         echo "<p class='text-red-600 text-xl mt-2'>".$resp['body']."</p>";
                                         echo "<p class='text-red-600 text-s mt-2'>".'三秒後跳轉'."</p>";
                                       }
-                                    //   if(empty($errors['body'])){ 
-                              
-                                    //     var_dump($right['body']);
-                                    //  }
                                     
                                       ?>
 

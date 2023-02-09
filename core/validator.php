@@ -3,7 +3,7 @@
 namespace core;
 
 
-class Validator{
+class Validator{//限制字串長度
     public static function string($value, $min = 1, $max = INF ){
         $value = trim($value);
 

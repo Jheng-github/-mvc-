@@ -39,7 +39,7 @@ class AuthController
     }
 
 
-    public function logout()//登出
+    public function logout() //登出
     {
         session_destroy();
         // var_dump('hi');
@@ -48,7 +48,7 @@ class AuthController
         header("Location: /");
     }
 
-    public function signup()//註冊
+    public function signup() //註冊
     {
         //$error = [];
 
@@ -60,16 +60,15 @@ class AuthController
             $email = $_POST['email'];
             if ($pwd !== $pwdrepeat) {
                 $this->error['password'] = "兩次密碼輸入不相同,請重新輸入";
-                
             }
             if ($this->data->checkUser($uid)) { //$POST進來的值
                 $this->error['uid'] = "帳號已存在請重新輸入";
-                
-            } if (empty($this->error)) {
+            }
+            if (empty($this->error)) {
                 $this->data->addUser($uid, $pwd);
-                $this->resp['right']= "註冊成功,請重新登入";
+                $this->resp['right'] = "註冊成功,請重新登入";
                 header('Refresh: 1; url=/notes');
-                }//如果沒error來的值加入進去
+            } //如果沒error來的值加入進去
         }
 
 

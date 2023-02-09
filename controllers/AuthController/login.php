@@ -1,15 +1,15 @@
 <?php
-use controllers\AuthController\AuthController;
-//use controllers\AuthController;
 
- $config = require base_path('config.php');
-$data = new AuthController($config['database']);
+use controllers\AuthController\AuthController;
+
+$config = require base_path('config.php'); //連線檔案
+$data = new AuthController($config['database']); //引入陣列值
 //dd($data);
 $data->login();
-//var_dump(session_id());
 
 
 
+//包裝以下至login()
 //---------------------------------------------
 // $error = [];
 

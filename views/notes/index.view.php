@@ -16,8 +16,6 @@
         echo "<a href=/note?id=" . $note['id'] ." class='text-blue-500 hover:underline'>"
           . "<li>" . htmlspecialchars($note['body']) . "</li>" . "</a>";
         echo "<p style=float:right;>".$note['time']."</p>";
-        //echo "唧唧唧唧唧歪歪歪";
-        //echo $note['id'];
         echo "<br>";
       }
       ?>

@@ -1,15 +1,6 @@
 <?php
 
-use core\Database;
-use core\Validator;
-use model\CRUDModel;
 use controllers\notes\NoteController;
-
-
-//var_dump(session_id());
-//require base_path('core/validator.php');
-//var_dump(base_path('core/validator.php'));
-
 
 $config = require base_path('config.php');
 
@@ -21,12 +12,8 @@ $db->createMsg();
 
 
 
-
-
-
-
-
-// ------------------------------------------------------------------
+//下方幫裝成createMsg()
+// ----------------------------------
 // $errors = [];
 // $right = [];
 //dd($_SERVER);//     ["REQUEST_METHOD"]=>string(4) "POST"

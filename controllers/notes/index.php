@@ -1,18 +1,16 @@
 <?php
-//var_dump(session_id());
-use core\Database;
-use model\CrudModel;
+
 use controllers\notes\NoteController;
 
-$config = require base_path('config.php');
+$config = require base_path('config.php'); //引入連線檔
 
-//$data = new CRUDModel($config['database']);
-//$db = new Database($config['database']); //在這邊產生根資料庫連地__connection , 
 $data = new NoteController($config['database']);
-//$data = new controllers\notes\NoteController($config['database']);
+
 $data->showUserMsg();
 
 
+
+//包裝下方成showUserMsg()
 // -------------------------------------
 // $heading = "My Notes";
 //echo '1232132132dd';

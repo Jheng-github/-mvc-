@@ -20,7 +20,7 @@ class NoteController
     public function showAllMeg()
     {
         //dd($_SESSION['permissions']);
-        if (!isset($_SESSION['user_id']) || ($_SESSION['permissions'] != 1)) { 
+        if (!isset($_SESSION['user_id']) || ($_SESSION['permissions'] != 1)) {
             echo "<script>alert('結語不要亂玩'); location.href='login';</script>";
             exit;
         }
@@ -30,11 +30,11 @@ class NoteController
         view("notes/messages.view.php", [
             'heading' => 'hello',
             'notes' => $notes,
-                ]);
+        ]);
     }
     public function createMsg()
     {
-        if (!isset($_SESSION['user_id'])) { 
+        if (!isset($_SESSION['user_id'])) {
             echo "<script>alert('will不要亂玩'); location.href='login';</script>";
             exit;
         }
@@ -73,7 +73,7 @@ class NoteController
             echo "<script>alert('請先登入'); location.href='login';</script>";
             exit;
         }
-        
+
         $notes = $this->data->getUserMsg();
 
         view("notes/index.view.php", [
@@ -99,18 +99,16 @@ class NoteController
                 //dd($note);
                 if (!Validator::string($_POST['edit'], 1, 500)) {
                     $errors['body'] = '字數不可大於500字或者沒有輸入';
-                    
                 }
                 if (empty($errors)) {
-   
+
                     $result = $this->data->updateMsg($id); //更新留言
-   
+
                     //dd($result);
                     $this->resp['body'] = '筆記成功更新';
 
                     header('Refresh: 2; url=/notes');
                 }
-            
             }
             view("notes/edit.view.php", [
                 'heading' => 'edit Note',
@@ -118,18 +116,17 @@ class NoteController
                 'resp' => $this->resp,
             ]);
         } else {
-       
+
             $note = $this->data->getOneMsg($id); //取得一筆留言
-            if(!isset($_SESSION['user_id']) && !isset($_SESSION['permissions'])){
+            if (!isset($_SESSION['user_id']) && !isset($_SESSION['permissions'])) {
                 abort(403);
             }
             authorize(($note['user_id'] == $_SESSION['user_id']) || ($_SESSION['permissions'] == 1));  // 包裝下方
- 
+
             view("notes/show.view.php", [
                 'heading' => 'No~~te',
                 'note' => $note
             ]);
-
         }
     }
 }

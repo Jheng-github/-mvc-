@@ -1,28 +1,21 @@
 <?php
 
-use core\Database;
-use core\Validator;
-use model\CRUDModel;
 use controllers\notes\NoteController;
 
-$config = require base_path('config.php');
-//$db = new Database($config['database']); //在這邊產生根資料庫連地__connection , 
-//$db = new CrudModel($config['database']);
+$config = require base_path('config.php'); //引入連線檔案
+
 $data = new NoteController($config['database']);
 
-if($_GET == null){
+if ($_GET == null) {
     abort(404);
 }
 
+$id = $_GET['id'];
 
-//dd($note['id']);
-$id = $_GET['id']; //
-//dd($id);
-//dd($_SERVER['REQUEST_URI']);
 $data->deleteOrEditMsg($id);
 
 
-
+//把下方包裝成deleteOrEditMsg()
 //-----------
 // $resp = [];
 // $right = [];

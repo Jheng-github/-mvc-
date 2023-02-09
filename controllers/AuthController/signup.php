@@ -1,21 +1,17 @@
 <?php
-//session_start();
-use core\Database;
-use controllers\SignupController;
-use model\UserModel;
-//var_dump(session_id());
 
 use controllers\AuthController\AuthController;
-$config = require base_path('config.php');
-// $db = new Database($config['database']); //在這邊產生根資料庫連地__connection , 
-// $data = new UserModel($config['database']);
-$data = new AuthController($config['database']);
+
+$config = require base_path('config.php'); //引入連線檔
+
+$data = new AuthController($config['database']); //連線
 $data->signup();
 
 
+
+
+//----把下方包裝成signup()
 // $error = [];
-
-
 // if (isset($_POST['submit'])) {
 //     $uid = $_POST['uid'];
 //     $pwd = $_POST['password'];
